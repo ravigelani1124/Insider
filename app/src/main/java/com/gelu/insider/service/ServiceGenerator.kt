@@ -9,7 +9,6 @@ import com.gelu.insider.R
 import com.gelu.insider.utility.ConnectionDetector
 import com.gelu.insider.utility.Loger
 import com.gelu.insider.utility.TinyDb
-import com.gelu.setup.service.ApiInterface
 import com.google.gson.JsonObject
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

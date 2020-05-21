@@ -8,7 +8,7 @@ class TinyDb {
 
     companion object {
 
-        val baseUrl: String = "https://api.insider.in/home"
+        val baseUrl: String = "https://api.insider.in/"
         val DEFULT_STRING = "-1"
     }
 
@@ -19,7 +19,6 @@ class TinyDb {
         sharedpreferences = PreferenceManager.getDefaultSharedPreferences(appContext)
         sharedpreferences = appContext.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE)
     }
-
 
     fun getString(key: String): String {
         return sharedpreferences!!.getString(key, DEFULT_STRING)!!

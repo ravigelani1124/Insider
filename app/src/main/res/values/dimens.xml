@@ -1,0 +1,11 @@
+<resources>
+
+    <dimen name="textSizeExtraLarge">@dimen/_20sdp</dimen>
+    <dimen name="textSizePerfectLarge">@dimen/_18sdp</dimen>
+    <dimen name="textSizeLarge">@dimen/_16sdp</dimen>
+    <dimen name="textSizeMedium">@dimen/_14sdp</dimen>
+    <dimen name="textSizeSmall">@dimen/_12sdp</dimen>
+    <dimen name="textSizeTiny">@dimen/_10sdp</dimen>
+    <dimen name="defaultMargin">@dimen/_16sdp</dimen>
+
+</resources>
