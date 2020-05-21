@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Insider</string>
+    <string name="str_no_internet">No internet connection, please make sure that Wi-Fi or mobile data is turned on, then try again.</string>
+</resources>
