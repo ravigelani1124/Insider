@@ -1,6 +1,8 @@
 package com.gelu.insider.activity
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gelu.insider.R
@@ -47,7 +49,7 @@ class HomeScreen : AppCompatActivity() {
             override fun OnSuccess(response: Response<JsonObject?>) {
                 try {
                     if (response.isSuccessful) {
-
+                        progressBar.visibility=View.GONE
                         popularEventList.addAll(
                             Gson().fromJson(
                                 JSONObject(
@@ -70,6 +72,7 @@ class HomeScreen : AppCompatActivity() {
                         eventTypeList.add(EventTypeModel("Featured Event", featuredEventList))
 
                         eventAdapter.notifyDataSetChanged()
+
                     }
 
                 } catch (e: Exception) {
@@ -78,7 +81,8 @@ class HomeScreen : AppCompatActivity() {
             }
 
             override fun OnFailure(call1: Throwable) {
-
+                progressBar.visibility=View.GONE
+                Toast.makeText(this@HomeScreen, call1.message, Toast.LENGTH_SHORT).show()
             }
         }, ServiceGenerator.createAPI(this).getEvent(i, filterBy, city))
     }

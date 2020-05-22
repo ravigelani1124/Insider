@@ -1,8 +1,6 @@
 package com.gelu.insider.service
 
 import android.app.Activity
-import android.app.Dialog
-import android.app.ProgressDialog
 import android.content.Context
 import android.widget.Toast
 import com.gelu.insider.R
@@ -23,7 +21,6 @@ class ServiceGenerator {
 
     var obj: ServiceGeneratorInterfaceWithFailure? = null
     var context: Activity
-    lateinit var contextLogOut: Context
 
     constructor(
         activity: Activity,
@@ -41,11 +38,10 @@ class ServiceGenerator {
             ).show()
             return
         }
-        val dialog: Dialog = ProgressDialog(context)
+
         call.enqueue(object : Callback<JsonObject?> {
             override fun onResponse(call1: Call<JsonObject?>, response: Response<JsonObject?>) {
 
-                dialog.dismiss()
                 try {
                     Loger.LogError("onResponse", " -- " + response.body())
                     if (response.body() != null) {
@@ -58,7 +54,6 @@ class ServiceGenerator {
             }
 
             override fun onFailure(call1: Call<JsonObject?>, t: Throwable) {
-                dialog.dismiss()
                 obj!!.OnFailure(t)
                 Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
             }

@@ -4,13 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gelu.insider.R
 import com.gelu.insider.model.event.EventModel
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.list_popular.view.*
+import kotlinx.android.synthetic.main.list_event_category.view.*
 
 data class EventCategoryAdapter(
     private val context: Context,
@@ -19,7 +20,8 @@ data class EventCategoryAdapter(
     RecyclerView.Adapter<EventCategoryAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_popular, parent, false)
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.list_event_category, parent, false)
         return MyViewHolder(v)
     }
 
@@ -37,7 +39,17 @@ data class EventCategoryAdapter(
             holder.tvEventTitle.text = eventModel.name
         }
         if (eventModel.horizontal_cover_image.isNotEmpty()) {
-            Picasso.get().load(eventModel.horizontal_cover_image).into(holder.ivCover)
+            Picasso.get().load(eventModel.horizontal_cover_image)
+                .into(holder.ivCover, object : com.squareup.picasso.Callback {
+                    override fun onSuccess() {
+                        holder.categoryProgress.visibility = View.GONE
+
+                    }
+
+                    override fun onError(e: java.lang.Exception?) {
+                        holder.categoryProgress.visibility = View.GONE
+                    }
+                })
         }
     }
 
@@ -45,6 +57,7 @@ data class EventCategoryAdapter(
         val tvEventTitle: AppCompatTextView = v.tvEventTitle
         val tvCategory: AppCompatTextView = v.tvCategory
         val ivCover: AppCompatImageView = v.ivCover
+        val categoryProgress: ProgressBar = v.categoryProgress
     }
 
 }

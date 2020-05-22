@@ -6,6 +6,6 @@
     <dimen name="textSizeMedium">@dimen/_14sdp</dimen>
     <dimen name="textSizeSmall">@dimen/_12sdp</dimen>
     <dimen name="textSizeTiny">@dimen/_10sdp</dimen>
-    <dimen name="defaultMargin">@dimen/_16sdp</dimen>
+    <dimen name="defaultMargin">@dimen/_14sdp</dimen>
 
 </resources>
