@@ -12,11 +12,11 @@ class TextView_semibold : AppCompatTextView{
      */
 
     constructor(context :Context) :super(context){
-        this.typeface= Typeface.createFromAsset(context.assets,"poppins_medium.ttf")
+        this.typeface= Typeface.createFromAsset(context.assets,"fonts/poppins_medium.ttf")
     }
 
     constructor(context: Context,attributeSet: AttributeSet) :super(context,attributeSet){
-        this.typeface= Typeface.createFromAsset(context.assets,"poppins_medium.ttf")
+        this.typeface= Typeface.createFromAsset(context.assets,"fonts/poppins_medium.ttf")
     }
 
     override fun setTypeface(tf: Typeface?, style: Int) {

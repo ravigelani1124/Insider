@@ -3,16 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="@dimen/_10sdp"
+    android:padding="@dimen/_12sdp"
+    tools:targetApi="lollipop">
 
-    <TextView
+
+    <com.gelu.insider.view.textView.TextView_bold
+        android:id="@+id/tvToolTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/str_home"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeMedium"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

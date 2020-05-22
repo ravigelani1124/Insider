@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_240sdp"
+    android:layout_height="@dimen/_230sdp"
+    android:layout_marginStart="@dimen/defaultMargin"
+    android:layout_marginTop="@dimen/defaultMargin"
+    android:layout_marginBottom="@dimen/defaultMargin"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="@dimen/_5sdp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCover"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/app_logo" />
+
+            <com.gelu.insider.view.textView.TextView_regular
+                android:id="@+id/tvEventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSizeSmall"
+                tools:text="@string/app_name" />
+        </LinearLayout>
+
+        <com.gelu.insider.view.textView.TextView_regular
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_blue_rounded"
+            android:gravity="center"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            tools:text="@string/app_name" />
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

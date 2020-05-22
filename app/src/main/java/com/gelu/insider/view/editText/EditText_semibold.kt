@@ -13,12 +13,12 @@ class EditText_semibold : AppCompatEditText {
      * Created by Ravi Gelani on 28/1/2020.
      */
     constructor(context : Context) :super(context){
-        this.typeface= Typeface.createFromAsset(context.assets,"poppins_medium.ttf")
+        this.typeface= Typeface.createFromAsset(context.assets,"fonts/poppins_medium.ttf")
         addTextChangedListener(mTextWatcher)
     }
 
     constructor(context: Context,attributeSet: AttributeSet) :super(context,attributeSet){
-        this.typeface= Typeface.createFromAsset(context.assets,"poppins_medium.ttf")
+        this.typeface= Typeface.createFromAsset(context.assets,"fonts/poppins_medium.ttf")
         addTextChangedListener(mTextWatcher)
     }
 
