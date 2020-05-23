@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.EventDetailsScreen"></activity>
         <activity
             android:name=".activity.HomeScreen"
             android:screenOrientation="portrait"
@@ -19,9 +20,9 @@
         <activity
             android:name=".activity.SplashScreen"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

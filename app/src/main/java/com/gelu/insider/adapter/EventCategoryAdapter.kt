@@ -38,6 +38,10 @@ data class EventCategoryAdapter(
         if (eventModel.name.isNotEmpty()) {
             holder.tvEventTitle.text = eventModel.name
         }
+
+        if (eventModel.venue_date_string.isNotEmpty()) {
+            holder.tvEventDate.text = eventModel.venue_date_string
+        }
         if (eventModel.horizontal_cover_image.isNotEmpty()) {
             Picasso.get().load(eventModel.horizontal_cover_image)
                 .into(holder.ivCover, object : com.squareup.picasso.Callback {
@@ -55,6 +59,7 @@ data class EventCategoryAdapter(
 
     class MyViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val tvEventTitle: AppCompatTextView = v.tvEventTitle
+        val tvEventDate: AppCompatTextView = v.tvEventDate
         val tvCategory: AppCompatTextView = v.tvCategory
         val ivCover: AppCompatImageView = v.ivCover
         val categoryProgress: ProgressBar = v.categoryProgress

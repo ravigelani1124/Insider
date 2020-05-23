@@ -10,6 +10,7 @@ import com.gelu.insider.adapter.EventAdapter
 import com.gelu.insider.model.event.EventModel
 import com.gelu.insider.model.event.EventTypeModel
 import com.gelu.insider.service.ServiceGenerator
+import com.gelu.insider.utility.ConnectionDetector
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
@@ -40,6 +41,10 @@ class HomeScreen : AppCompatActivity() {
         rvEvents.layoutManager =
             LinearLayoutManager(this@HomeScreen, LinearLayoutManager.VERTICAL, false)
         rvEvents.adapter = eventAdapter
+
+        if(!ConnectionDetector.isConnectedToInternet(this@HomeScreen)){
+            progressBar.visibility=View.GONE
+        }
     }
 
     private fun callEventAPI(i: Int, filterBy: String, city: String) {
