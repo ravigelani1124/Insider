@@ -3,4 +3,7 @@
     <string name="str_no_internet">No internet connection, please make sure that Wi-Fi or mobile data is turned on, then try again.</string>
     <string name="str_home">Home</string>
     <string name="str_popular_events">Popular Events</string>
+    <string name="str_rsvp_on">Book Now</string>
+    <string name="str_rsvp_cosed">Rsvp closed</string>
+    <string name="str_rupee">Rs</string>
 </resources>

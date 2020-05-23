@@ -9,6 +9,7 @@ class TinyDb {
     companion object {
 
         val baseUrl: String = "https://api.insider.in/"
+        val eventModel: String = "eventModel"
         val DEFULT_STRING = "-1"
     }
 

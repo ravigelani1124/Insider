@@ -1,6 +1,7 @@
 package com.gelu.insider.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,10 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gelu.insider.R
+import com.gelu.insider.activity.EventDetailsScreen
 import com.gelu.insider.model.event.EventModel
+import com.gelu.insider.utility.TinyDb
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_event_category.view.*
 
@@ -54,6 +58,15 @@ data class EventCategoryAdapter(
                         holder.categoryProgress.visibility = View.GONE
                     }
                 })
+        }
+
+        holder.itemView.setOnClickListener {
+            context.startActivity(
+                Intent(context, EventDetailsScreen::class.java).putExtra(
+                    TinyDb.eventModel,
+                    Gson().toJson(eventModel)
+                )
+            )
         }
     }
 
