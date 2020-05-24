@@ -5,5 +5,5 @@
     <string name="str_popular_events">Popular Events</string>
     <string name="str_rsvp_on">Book Now</string>
     <string name="str_rsvp_cosed">Rsvp closed</string>
-    <string name="str_rupee">Rs </string>
+    <string name="str_rupee">\u20B9</string>
 </resources>

@@ -49,7 +49,7 @@ class EventDetailsScreen : AppCompatActivity(), View.OnClickListener {
         }
         if (eventModel.price_display_string.isNotEmpty()) {
             tvEventPrice.text =
-                resources.getString(R.string.str_rupee) + eventModel.price_display_string
+                resources.getString(R.string.str_rupee) +" "+ eventModel.price_display_string
         }
 
         if (eventModel.venue_name.isNotEmpty()) {
